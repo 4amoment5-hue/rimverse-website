@@ -100,7 +100,30 @@ height:auto;
 display:block;
 }
 
+.tag{
+display:inline-block;
+background:#E11D2E;
+padding:8px 18px;
+border-radius:30px;
+font-weight:600;
+margin-bottom:20px;
+}
 
+.btn{
+display:inline-block;
+background:#E11D2E;
+color:white;
+padding:18px 40px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(225,29,46,.4);
+}
 
 
   
