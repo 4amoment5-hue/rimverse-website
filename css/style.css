@@ -173,7 +173,12 @@ margin-bottom:20px;
 .product-card button{
 width:100%;
   }
-
+.price{
+    font-size:26px;
+    font-weight:bold;
+    color:#E11D2E;
+    margin:15px 0;
+}
   
 
 
