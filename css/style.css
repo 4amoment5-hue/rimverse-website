@@ -1,184 +1,485 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-background:#0D0D0D;
-color:white;
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:black;
+body {
+    background: #0D0D0D;
+    color: white;
 }
 
-.logo{
-font-size:34px;
-font-weight:bold;
-color:#E11D2E;
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #050505;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:30px;
-transition:.3s;
+.logo img {
+    width: 130px;
+    height: auto;
+    display: block;
 }
 
-nav a:hover{
-color:#E11D2E;
+nav {
+    display: flex;
+    gap: 30px;
 }
 
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px 8%;
-min-height:85vh;
-gap:60px;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.hero-text{
-max-width:550px;
+nav a:hover {
+    color: #E11D2E;
 }
 
-.hero h1{
-font-size:65px;
-line-height:1.1;
-margin-bottom:20px;
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 70px 8%;
+    overflow: hidden;
 }
 
-.hero p{
-font-size:20px;
-color:#bbb;
-margin-bottom:35px;
+.hero-text {
+    flex: 1;
+    max-width: 600px;
 }
 
-button{
-background:#E11D2E;
-color:white;
-padding:18px 40px;
-border:none;
-border-radius:8px;
-font-size:18px;
-cursor:pointer;
-transition:.3s;
+.hero h1 {
+    font-size: clamp(45px, 6vw, 78px);
+    line-height: 1;
+    margin-bottom: 25px;
+    font-weight: 800;
 }
 
-button:hover{
-transform:scale(1.05);
+.hero-text > p {
+    color: #bdbdbd;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
 
-.hero-image{
-flex:1;
-display:flex;
-justify-content:center;
+.btn {
+    display: inline-block;
+    background: #E11D2E;
+    color: white;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.hero-image img{
-width:900px;
-max-width:none;
-height:auto;
-display:block;
+.btn:hover {
+    background: #ff2639;
+    transform: translateY(-3px);
 }
 
-.tag{
-display:inline-block;
-background:#E11D2E;
-padding:8px 18px;
-border-radius:30px;
-font-weight:600;
-margin-bottom:20px;
+.infos {
+    margin-top: 30px;
 }
 
-.btn{
-display:inline-block;
-background:#E11D2E;
-color:white;
-padding:18px 40px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
+.infos p {
+    color: #d5d5d5;
+    margin-bottom: 10px;
+    font-size: 14px;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(225,29,46,.4);
-}
-.products{
-padding:80px 8%;
-}
-
-.products h2{
-font-size:40px;
-margin-bottom:40px;
-text-align:center;
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+.hero-image img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: 0.4s;
 }
 
-.product-card{
-background:#161616;
-padding:25px;
-border-radius:18px;
-text-align:center;
-transition:0.3s;
+.hero-image img:hover {
+    transform: scale(1.04);
 }
 
-.product-card:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 35px rgba(225,29,46,.25);
+/* =========================
+   PRODUITS
+========================= */
+
+.products {
+    padding: 90px 8%;
+    background: #101010;
 }
 
-.product-card img{
-width:100%;
-height:220px;
-object-fit:contain;
-margin-bottom:20px;
+.products h2,
+.why-rimverse h2,
+.about h2,
+.contact h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 50px;
+    font-weight: 700;
 }
 
-.product-card h3{
-margin-bottom:10px;
-font-size:24px;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 
-.product-card p{
-color:#bbb;
-margin-bottom:20px;
+.product-card {
+    background: #181818;
+    border: 1px solid #262626;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.product-card button{
-width:100%;
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #E11D2E;
+    box-shadow: 0 15px 40px rgba(225, 29, 46, 0.18);
+}
+
+.product-image {
+    position: relative;
+    height: 280px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge.new {
+    background: #18a558;
+    color: white;
+}
+
+.badge.used {
+    background: #e67e22;
+    color: white;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #E11D2E;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sizes {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.product-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #E11D2E;
+    color: white;
+    text-decoration: none;
+    padding: 13px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.product-btn:hover {
+    background: #ff2639;
+}
+
+/* =========================
+   POURQUOI RIMVERSE
+========================= */
+
+.why-rimverse {
+    padding: 90px 8%;
+    background: #0D0D0D;
+}
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.advantage {
+    background: #171717;
+    border: 1px solid #252525;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.advantage:hover {
+    transform: translateY(-6px);
+    border-color: #E11D2E;
+}
+
+.advantage span {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 18px;
+}
+
+.advantage h3 {
+    margin-bottom: 12px;
+}
+
+.advantage p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================
+   À PROPOS
+========================= */
+
+.about {
+    padding: 90px 8%;
+    background: #101010;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: #bdbdbd;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 90px 8%;
+    text-align: center;
+    background: #0D0D0D;
+}
+
+.contact p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 45px 20px;
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    color: #E11D2E;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #888;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 28px;
+    z-index: 999;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   VERSION MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo img {
+        width: 105px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-text > p {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        max-width: 500px;
+    }
+
+    .infos {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-text > p {
+        font-size: 15px;
+    }
+
+    .products h2,
+    .why-rimverse h2,
+    .about h2,
+    .contact h2 {
+        font-size: 32px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 300px;
+    }
   }
-.price{
-    font-size:26px;
-    font-weight:bold;
-    color:#E11D2E;
-    margin:15px 0;
-}
-  
-
-
